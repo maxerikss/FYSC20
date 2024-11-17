@@ -16,15 +16,74 @@
 
 Gauss's law tells us that 
 \begin{equation}
-    \nabla \cdot \textbf{E} = \frac{\rho(\textbf{r})}{\varepsilon_0},
+    \nabla \cdot \textbf{E}(\vec{r}) = \frac{\rho(s)}{\varepsilon_0},\label{eq:gauss}
 \end{equation}
-where $\textbf{E}$ is the electrostatic field, $\varepsilon_0$ is the vacuum permittivity, and $\rho(\textbf{r})$ is the charge density defined as
+where $\textbf{E}(\vec{r})$ is the electrostatic field, $\varepsilon_0$ is the vacuum permittivity, and $\rho(s)$ is the charge density defined as
 \begin{singlespace}
 \begin{equation}
-    \rho(\mathbf{r}) = 
+    \rho(s) = 
     \begin{cases}
         \rho_0 & s \leq a\\
-        0 & s > a
+        0 & s > a.
     \end{cases}
 \end{equation}
 \end{singlespace}
+Rewriting Eq. \eqref{eq:gauss} into integral form over the volume $V$ confined by the Gaussian surface $\partial V$ we get
+\begin{equation}
+    \int_{V} (\nabla \cdot \vec{E}(\vec{r})) \dd \tau = \frac{1}{\varepsilon_0} \int_V  \rho(s)\dd \tau.
+\end{equation}
+Applying Gauss's theorem on the left hand side we obtain
+\begin{equation}
+    \int_{\partial V}  \vec{E}(\vec{r}) \cdot \dd \vec{a} = \frac{1}{\varepsilon_0} \int_V  \rho(s)\dd \tau.\label{eq:intGauss}
+\end{equation}
+Due to cylindrical symmetry we can write 
+\begin{equation}
+    \vec{E}(\vec{r}) = E(s) \vec{\hat{s}}.
+\end{equation}
+
+
+Rewriting the left hand sides of Eq. \eqref{eq:intGauss} gives us
+\begin{equation}
+    E(s) \int_{\partial V} \vec{\hat{s}} \cdot \dd \vec{a} = E(s)s \int_{\partial V} \dd \varphi \dd z =  \frac{1}{\varepsilon_0} \int_V  \rho(s)\dd \tau.
+\end{equation}
+Due to the symmetry we have the flux through the Gaussian surface at the top and bottom is zero, and only the lateral surface contributes.
+\begin{equation}
+    E(s)s \int_{\partial V} \dd \varphi \dd z = E(s)s \int_{0}^{2\pi}\dd\varphi \int_{-L/2}^{L/2} \dd z = E(s)s \cdot 2\pi L.
+    \label{eq:LHS}
+\end{equation}
+For the right hand side we must take the integral for the cases $s \leq a$ and $s > a$.
+\paragraph{$s \leq a$:} 
+\begin{equation}
+    \frac{1}{\varepsilon_0} \int_{V} \rho(s) \dd \tau = \frac{\rho_0}{\varepsilon_0} \int_{0}^{2\pi}\dd \varphi \int_{-L/2}^{L/2} \dd z \int_{0}^{s} s' \dd s' = \frac{\rho_0}{\varepsilon_0} \cdot 2\pi L \left[\frac{s'^2}{2}\right]_0^s = \frac{\rho_0}{\varepsilon_0}\cdot \pi L s^2\label{eq:RHS1}
+\end{equation}
+\paragraph{$s > a$:}
+\begin{align}
+    \frac{1}{\varepsilon_0} \int_{V} \rho(s) \dd \tau &= \frac{1}{\varepsilon_0} \int_{0}^{2\pi}\dd \varphi \int_{-L/2}^{L/2} \dd z \int_{0}^{s} \rho(s') s' \dd s'\\
+    &= \frac{1}{\varepsilon_0} \int_{0}^{2\pi}\dd \varphi \int_{-L/2}^{L/2} \dd z \left( \int_{0}^{a} \rho_0 s' \dd s' + \int_{a}^{s} 0 \cdot s' \dd s' \right)\\
+    &= \frac{\rho_0}{\varepsilon_0} \cdot 2 \pi L \left[\frac{s'^2}{2}\right]_0^a = \frac{\rho_0}{\varepsilon_0} \cdot \pi L a^2\label{eq:RHS2}
+\end{align}
+For the field inside the cylinder we combine Eq. \eqref{eq:LHS} and \eqref{eq:RHS1}
+\begin{equation}
+    E_\text{in}(s)s \cdot 2\pi L = \frac{\rho_0}{\varepsilon_0}\cdot \pi L s^2 \iff E(s)_\text{in} = \frac{\rho_0 s}{2 \varepsilon_0}  \iff \vec{E}_\text{in}(\vec{r}) = \frac{\rho_0 s}{2 \varepsilon_0} \vec{\hat{s}}.
+\end{equation}
+For the field outside the cylinder we combine \eqref{eq:LHS} and \eqref{eq:RHS2}
+\begin{equation}
+    E_\text{out}(s)s \cdot 2\pi L = \frac{\rho_0}{\varepsilon_0} \cdot \pi L a^2 \iff E_\text{out}(s) = \frac{\rho_0 a^2}{2 \varepsilon_0 s} \iff \vec{E}_\text{out} (\vec{r}) = \frac{\rho_0 a^2}{2 \varepsilon_0 s} \vec{\hat{s}}
+\end{equation}
+
+\newpage
+\paragraph{Answer:} The electrostatic field is
+\begin{singlespace}
+\begin{equation}
+    \vec{E}(\vec{r}) = 
+    \begin{cases}
+        \vec{E}_\text{in}(\vec{r}) & s \leq a\\
+        \vec{E}_\text{out} (\vec{r}) & s > a
+    \end{cases}
+    = \frac{\rho_0}{2 \varepsilon_0} \vec{\hat{s}} 
+    \begin{cases}
+        s & s \leq a\\
+        a^2/s & s > a
+    \end{cases}
+\end{equation}
+\end{singlespace} 
