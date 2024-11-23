@@ -1,0 +1,31 @@
+\paragraph{Problem:} A spherical shell of radius $R_a$ carries a surface charge $\sigma = \alpha \cos\theta$.
+\begin{enumerate}[label=(\alph*)]
+    \item Calculate its dipole moment with respect to the center of the sphere.
+    \item Calculate the approximate potential at points far away from the sphere.
+    \item The exact solution is given by
+            \begin{equation}
+                V(r,\theta) = \frac{\alpha R_a^3}{3\epsilon_0 r^2} \cos\theta
+            \end{equation}
+            What does this imply for the higher poles?
+\end{enumerate}
+
+\paragraph{Solution:} We start by drawing a sketch seen in Fig. \ref{fig:sketch}.
+
+\begin{figure}[H]
+    \centering\hspace*{2.3cm}
+    \input{figures/sketch.pdf_tex}
+    \caption{Sketch of the problem setup.}
+    \label{fig:sketch}
+\end{figure}
+
+Since we are looking at a spherical shell it is reasonable to use spherical coordinates, as can be seen in the sketch. The cartesian axes are shown as well. 
+
+\paragraph{(a) Solution:} The dipole moment $\mathbf{p}$ of a continuous distribution centered at the origin is 
+\begin{equation}
+    \mathbf{p} = \int_V \mathbf{r}' \rho(\mathbf{r}')\dd \tau',\label{eq:p_start}
+\end{equation}
+where $\rho$ is the volume charge density, and $V$ is the volume we are integrating over. In our case, since the charge is constricted on the surface, we can use a delta function.
+\begin{equation}
+    \rho(\mathbf{r}) = \delta(r-R_a)\sigma = \delta(r-R_a)\alpha\cos\theta.
+\end{equation}
+Using the fact that the vector $\mathbf{r}$ and the volume element $\dd \tau$ in spherical coordinates is $\mathbf{r} = r\mathbf{\hat{r}}$ and $\dd \tau = (\dd r)(r \dd \theta)(r \sin\theta \dd\varphi)$ we can rewrite Eq. \eqref{eq:p_start}.
