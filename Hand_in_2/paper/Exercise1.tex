@@ -14,13 +14,13 @@
 \begin{figure}[H]
     \centering\hspace*{2.3cm}
     \input{figures/sketch.pdf_tex}
-    \caption{Sketch of the problem setup.}
+    \caption{Sketch of the problem setup. The red is the cartesian coordinates axes, while the blue is the spherical coordinate axes.}
     \label{fig:sketch}
 \end{figure}
 
 Since we are looking at a spherical shell it is reasonable to use spherical coordinates, as can be seen in the sketch. The cartesian axes are shown as well. 
 
-\paragraph{(a) Solution:} The dipole moment $\mathbf{p}$ of a continuous distribution centered at the origin is 
+\paragraph{(a) Solution:} The dipole moment $\mathbf{p}$ of a continuous distribution with respect to the origin is 
 \begin{equation}
     \mathbf{p} = \int_V \mathbf{r}' \rho(\mathbf{r}')\dd \tau',\label{eq:p_start}
 \end{equation}
@@ -28,4 +28,67 @@ where $\rho$ is the volume charge density, and $V$ is the volume we are integrat
 \begin{equation}
     \rho(\mathbf{r}) = \delta(r-R_a)\sigma = \delta(r-R_a)\alpha\cos\theta.
 \end{equation}
-Using the fact that the vector $\mathbf{r}$ and the volume element $\dd \tau$ in spherical coordinates is $\mathbf{r} = r\mathbf{\hat{r}}$ and $\dd \tau = (\dd r)(r \dd \theta)(r \sin\theta \dd\varphi)$ we can rewrite Eq. \eqref{eq:p_start}.
+Using this and the fact that the vector $\mathbf{r}$ and the volume element $\dd \tau$ in spherical coordinates is $\mathbf{r} = r\mathbf{\hat{r}}$ and $\dd \tau = (\dd r)(r \dd \theta)(r \sin\theta \dd\varphi)$ we can rewrite Eq. \eqref{eq:p_start}.
+\begin{equation}
+    \mathbf{p} = \int_V r' \mathbf{\hat{r}}\delta(r-R_a)\alpha\cos\theta'(\dd r')(r' \dd \theta')(r' \sin\theta' \dd\varphi').
+\end{equation}
+The delta function will collapse the radial integral and this gives
+\begin{equation}
+    \mathbf{p} =\int_{\theta'=0}^{\theta'=\pi} \int_{\varphi'=0}^{\varphi'=2\pi} R_a^3\alpha \cos\theta' \sin\theta' \vec{\hat{r}}\dd\theta' \dd\varphi' = R_a^3 \alpha \int_{0}^{\pi}\dd\theta' \cos\theta' \sin\theta' \int_{0}^{2\pi} \dd\varphi' \uvec{r}
+\end{equation}
+Since the radial unit vector is $\uvec{r} = \uvec{x} \sin\theta \cos\varphi + \uvec{y} \sin\theta \sin\varphi + \uvec{z} \cos\theta$ we can write
+\begin{equation}
+    \vec{p} = R_a^3 \alpha \int_{0}^{\pi}\dd\theta' \cos\theta' \sin\theta' \left( \uvec{x}\sin\theta' \int_{0}^{2\pi}\dd\varphi' \cos\varphi' + \uvec{y}\sin\theta' \int_{0}^{2\pi}\dd\varphi' \sin\varphi' + \uvec{z}\cos\theta' \int_{0}^{2\pi} \dd\varphi'\right)\label{eq:p_new}
+\end{equation}
+Doing the $\varphi$-dependent integrals one by one we get for the first integral
+\begin{equation}
+    \int_{0}^{2\pi}\dd\varphi' \cos\varphi' = [\sin\varphi']_0^{2\pi} = 0 - 0 = 0
+\end{equation}
+and for the second integral
+\begin{equation}
+    \int_{0}^{2\pi}\dd\varphi' \sin\varphi' = [-\cos\varphi']_0^{2\pi} = -1 + 1 = 0
+\end{equation}
+and for the third integral
+\begin{equation}
+    \int_{0}^{2\pi}\dd\varphi' = [\varphi']_0^{2\pi} = 2\pi -0 = 2\pi
+\end{equation}
+Thus Eq. \eqref{eq:p_new} becomes
+\begin{equation}
+    \vec{p} = 2\pi R_a^3 \alpha \uvec{z} \int_{0}^{\pi}\dd\theta' \cos^2\theta' \sin\theta'.
+\end{equation}
+Doing the substitution $u = \cos\theta$ we get that $\dd u = -\dd\theta \sin\theta$ and the lower limit becomes $u(\theta = 0) = 1$ and the upper limit $u(\theta = \pi) = -1$. Thus 
+\begin{equation}
+    \vec{p} = -2\pi R_a^3 \alpha \uvec{z}\int_{1}^{-1} \dd u u^2 = 2\pi R_a^3 \alpha \uvec{z}\int_{-1}^{1} \dd u u^2
+\end{equation}
+Evaluating this we get
+\begin{equation}
+    \vec{p} = 2\pi R_a^3 \alpha \uvec{z} \left[ \frac{u^3}{3} \right]_{-1}^1 = 2\pi R_a^3 \alpha \uvec{z} \left( \frac{1}{3} + \frac{1}{3} \right) = \frac{4\pi R_a^3 \alpha}{3} \uvec{z}.
+\end{equation}
+\paragraph{(a) Answer:} The dipole moment is
+\begin{equation}
+    \vec{p} = \frac{4\pi R_a^3 \alpha}{3} \uvec{z}.
+\end{equation}
+
+\paragraph{(b) Solution:} We can use multipole expansion for the potential
+\begin{equation}
+    V(\vec{r}) = \frac{1}{4 \pi \epsilon_0 r}\left[ Q + \frac{\vec{p}\cdot\uvec{r}}{r} + \cdots \right]
+\end{equation}
+where $Q$ is the monopole moment, which is described as
+\begin{equation}
+    Q = \int_{V} \rho(\vec{r}')\dd \tau',
+\end{equation}
+that is it is the total charge of the distribution. Since the charge above the $xy$-plane has the same magnitude but opposite charge to the charge below the $xy$-plane, this fact comes from the that the charge density follows a cosine function with no phase, it is plain to see that the total charge will be 0. Thus $Q = 0$ and disregarding higher order terms have
+\begin{equation}
+    V(\vec{r}) = \frac{1}{4 \pi \epsilon_0 r^2} \vec{p}\cdot\uvec{r}
+\end{equation}
+We have already calculated $\vec{p}$ and we know that it only has a $\uvec{z}$ component. Thus the only component of $\uvec{r}$ that will survive is the $\uvec{z}$ component thus
+\begin{equation}
+    V(\vec{r}) = \frac{1}{4 \pi \epsilon_0 r^2} \frac{4\pi R_a^3 \alpha}{3} \cos\theta = \frac{R_a^3 \alpha}{3 \epsilon_0 r^2} \cos\theta
+\end{equation}
+which is only dependant on $r$ and $\theta$.
+\paragraph{(b) Answer:} The potential far from the dipole is
+\begin{equation}
+    V(r,\theta) = \frac{R_a^3 \alpha}{3 \epsilon_0 r^2} \cos\theta
+\end{equation}
+
+\paragraph{(c) Solution/Answer:} Since the dipole term from the multipole expansion is equal to the exact solution we can conclude that the higher order terms must be zero. It is reasonable since we have a dipole configuration that the highest order non-zero term is the dipole term.
