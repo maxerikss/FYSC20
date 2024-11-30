@@ -47,6 +47,7 @@
 \usepackage{comment} % Use \begin{comment}
 \usepackage{listings} % Enables source code listings
 \usepackage{enumerate}
+\usepackage{enumitem}
 \definecolor{codegreen}{rgb}{0,0.75,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -74,3 +75,6 @@
 
 % using inkscapefiles
 \graphicspath{{figures/}}
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\uvec}[1]{\vec{\hat{#1}}}
