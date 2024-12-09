@@ -1,1 +1,56 @@
-\paragraph{Problem:} 
+\paragraph{Problem:} Suppose you have two infinite straight line charges $\lambda$, a distance $d$ apart, moving along at a constant speed $v$. How great would $v$ have to be in order for the magnetic attraction to balance the electrical repulsion? Work out the actual number. Is this a reasonable sort of speed?
+
+\paragraph{Solutions:} Firstly a sketch of the problem can be seen in Fig. \ref{fig:sketch}.
+
+\begin{figure}[H]
+    \centering
+    \input{figures/sketch.pdf_tex}
+    \caption{A sketch of the problem with cartesian coordinates and cylindrical coordinates shown. The $y$-axis is pointing out of the page. $\varphi$ points from the $x$-axis towards the $y$-axis. }
+    \label{fig:sketch}
+\end{figure}
+
+We can set the $x$-position of the bottom line charge at $x = 0$ and the top at $x = d$. We can calculate the magnetic field from the bottom line charge first. Using that the current is defined as $\vec{I} = \lambda \vec{v}$ we can say that each wire carries a current $I$. Since the wire is infinitely long we have cylindrical symmetry, and using the right hand rule we can write $\vec{B}(\vec{r}) = B(s)\uvec{\varphi}$. Then we can place a circular surface, $S$ with radius $s$, with a normal parallel to the current, centered on the wire and use Ampere's law we can write
+\begin{equation}
+    \nabla \times \vec{B} = \mu_0 \vec{J} 
+    \iff
+     B(s)\oint_{\partial S} \uvec{\varphi} \cdot \dd \vec{l} = \mu_0 I_\text{enc}
+\end{equation}
+Solving for $B(s)$
+\begin{align}
+    B(s) \int_{0}^{2\pi} s \dd \varphi &= \mu_0 I\\
+    2\pi s B(s) &= \mu_0 I\\
+    B(s) &= \frac{\mu_0 I}{2\pi s}
+\end{align}
+Thus we have the magnetic field
+\begin{equation}
+    \vec{B}_\text{lower}(\vec{r}) = \frac{\mu_0 I}{2\pi s} \uvec{\varphi}
+\end{equation}
+We can now find the electric field from the line charge. The symmetry gives us $\vec{E}(\vec{r}) = E(s) \uvec{s}$. Placing a cylindrical gaussian surface, $\partial V$, around the wire with length $L$ and radius $s$ such that the top and bottom of the cylinder has a normal parallel to the current and is centered on the wire, we will get $Q_\text{enc} = L \lambda$. Then using Gauss's law
+\begin{equation}
+    \nabla \cdot \vec{E} = \frac{\rho}{\epsilon_0} 
+    \iff
+    E(s) \oint_{\partial V} \uvec{s} \cdot \dd \vec{a}= \frac{Q_\text{enc}}{\epsilon_0} = \frac{L\lambda}{\epsilon_0}
+\end{equation}
+Solving for E(s)
+\begin{align}
+    E(s)\int_{0}^{L}\int_{0}^{2\pi}s\dd \varphi \dd z &= \frac{L\lambda}{\epsilon_0}\\
+    2\pi L s E(s) &= \frac{L\lambda}{\epsilon_0}\\
+    E(s) &= \frac{\lambda}{2\pi \epsilon_0 s}
+\end{align}
+Thus we get the electric field
+\begin{equation}
+    \vec{E}_\text{lower}(\vec{r}) = \frac{\lambda}{2\pi \epsilon_0 s} \uvec{s}
+\end{equation}
+Since the wires are identical with the same line charge and same velocity, and are only interested in the field on the wires and a charge is not affected by it's own fields, we don't need to calculate the field from the upper wire. To calculate the force on the wires we can use the lorentz force law.
+\begin{equation}
+    \vec{F} = \int \dd q (\vec{E} + \vec{v} \times \vec{B})
+\end{equation}
+For the magnetic and electrical forces to cancel so the net force is 0 we must have
+\begin{align}
+    \vec{E} &= -\vec{v} \times \vec{B}\\
+    \frac{\lambda}{2\pi \epsilon_0 d} \uvec{s} &= -v \uvec{z} \times (\frac{\mu_0 I}{2\pi d} \uvec{\varphi})\\
+    \frac{\lambda}{2\pi \epsilon_0 d} \uvec{s} &= \frac{\mu_0 \lambda v^2}{2\pi d} \uvec{s}\\
+    v^2 &= \frac{1}{\mu_0 \epsilon_0}\\
+    v &= \sqrt{\frac{1}{\mu_0 \epsilon_0}} = c
+\end{align}
+\paragraph{Answer:} The line charge would have to move as fast as the speed of light for the net force to be zero. This is not reasonable.
