@@ -1,0 +1,105 @@
+\paragraph{Problem:} A uniform surface current density $\vec{K} = K \uvec{z}$ fills the entire $xz$-plane.
+\begin{enumerate}[label=(\alph*)]
+    \item Calculate the magnetic field. Argue and explain your steps carefully.
+    \item  Calculate the vector potential in Coulomb gauge. Convince yourself that you have found the correct result.
+\end{enumerate}
+
+\paragraph{Solution (a):} First step is to sketch the problem.
+\begin{figure}[H]
+    \centering
+    \input{figures/sketch.pdf_tex}
+    \caption{Sketch of the problem. The direction of the $\vec{B}$-field is given by the right-hand rule.}
+    \label{fig:sketch}
+\end{figure}
+
+As per the right-hand rule and the sketch seen above and the fact that the charge is extending on the entire $xz$-field we can write 
+\begin{equation}
+    \vec{B} = B(y) \uvec{x}.\label{eq:symm}
+\end{equation}
+Then use Ampere's law in integral form 
+\begin{equation}
+    \oint_{\partial S} \vec{B} \cdot \dd \vec{l} = \mu_0 I_\text{enc}.\label{eq:ampere}
+\end{equation}
+Integrating along the border of a rectangular surface $S$, which can be seen in Fig. \ref{fig:ampere}. The normal of the surface is parallel to $\vec{K}$, and half of the surface is above the $xz$-plane. Let the width be $l$ and the height $2y$ with corners (coordinates in $(x,y)$) $a = (0, -y), b=(l,-y), c =(l, y), d=(0, y)$.
+\begin{figure}[H]
+    \centering
+    \input{figures/integrate.pdf_tex}
+    \caption{Integration line inserted to the sketch.}
+    \label{fig:ampere}
+\end{figure}
+Due to the symmetry we can write
+\begin{equation}
+    B(-y) = -B(y).\label{eq:symm2}
+\end{equation}
+Combining Eq. \eqref{eq:ampere} and \eqref{eq:symm} we get
+\begin{equation}
+    \oint_{\partial S} \vec{B} \cdot \dd \vec{l} 
+    = \int_{a}^{b} B(-y) \dd x
+    +\int_{c}^{d} B(y) \dd x
+    = \mu_0 K l
+\end{equation}
+Here we have used that the line segments $b-c$ and $d-a$ are perpendicular to the $\vec{B}$-field, so those parts don't contribute. The $x$-coordinates of the corners are $a_x = 0$, $b_x = l$, $c_x = l$ and $d_x = 0$ Thus 
+\begin{equation}
+    \int_{a}^{b} B(-y) \dd x
+    +\int_{c}^{d} B(y) \dd x = B(-y) \int_{0}^{l} \dd x + B(y) \int_{l}^{0}\dd x = \mu_0 K l
+\end{equation}
+Now using Eq. \eqref{eq:symm2} we get
+\begin{equation}
+    2B(y) \int_{l}^{0} \dd x = -2B(y)l = \mu_0 K l \iff B(y) = -\frac{\mu_0 K}{2}
+\end{equation}
+However, we need to consider both cases $y < 0$ and $y > 0$. Inspecting the sketch and using the right-hand rule we get
+\begin{equation}
+    \vec{B} = \begin{cases}\displaystyle
+        -\frac{\mu_0 K}{2}\uvec{x} & y > 0\\ \displaystyle
+        \frac{\mu_0 K}{2}\uvec{x} & y < 0
+    \end{cases}.
+\end{equation}
+
+\paragraph{Solution (b):} We let $\vec{A} = a_x \uvec{x} + a_y \uvec{y} + a_z \uvec{z}$. Then we use
+\begin{equation}
+    \vec{B} = \nabla \times \vec{A} = 
+     \left( \frac{\partial a_z}{\partial y} - \frac{\partial a_y}{\partial z} \right)\uvec{x} 
+    +\left( \frac{\partial a_x}{\partial z} - \frac{\partial a_z}{\partial x} \right)\uvec{y} 
+    +\left( \frac{\partial a_y}{\partial x} - \frac{\partial a_x}{\partial y} \right)\uvec{z} 
+\end{equation}
+We can conclude that 
+\begin{equation}
+    \frac{\partial a_z}{\partial y} - \frac{\partial a_y}{\partial z} = \begin{cases}\displaystyle
+        -\frac{\mu_0 K}{2} & y > 0\\ \displaystyle
+        \frac{\mu_0 K}{2} & y < 0
+    \end{cases}.
+\end{equation}
+We also have that in Coulomb gauge
+\begin{equation}
+    \nabla \cdot A = 0 \iff \frac{\partial a_x}{\partial x} +\frac{\partial a_y}{\partial y} +\frac{\partial a_z}{\partial z} = 0.
+\end{equation}
+We can solve this if $a_x$ and $a_y$ is constant and $a_z$ is only dependent on y. Thus 
+\begin{equation}
+    \frac{\partial a_z}{\partial y} = \begin{cases}\displaystyle
+        -\frac{\mu_0 K}{2} & y > 0\\ \displaystyle
+        \frac{\mu_0 K}{2} & y < 0
+    \end{cases}
+        \iff 
+        a_z = \begin{cases}\displaystyle
+            -\frac{\mu_0 K y}{2} + C & y > 0\\ \displaystyle
+            \frac{\mu_0 K y}{2} + C & y < 0
+        \end{cases}
+\end{equation}
+where $C$ is some constant. Then let $\vec{c} = a_x \uvec{x} + a_y \uvec{y} + C \uvec{z}$ be a constant vector. Thus 
+\begin{equation}
+    \vec{A} = \begin{cases} \displaystyle
+        -\frac{\mu_0 K y}{2}\uvec{z} + \vec{c} & y > 0\\ \displaystyle
+        \frac{\mu_0 K y}{2}\uvec{z} + \vec{c} & y < 0
+    \end{cases}
+\end{equation}
+\paragraph{Answer:} The magnetic field and vector potential in Coulomb gauge is 
+\begin{equation}
+    \vec{B} = \begin{cases}\displaystyle
+        -\frac{\mu_0 K}{2}\uvec{x} & y > 0\\ \displaystyle
+        \frac{\mu_0 K}{2}\uvec{x} & y < 0
+    \end{cases} \quad \text{and} \quad
+    \vec{A} = \begin{cases} \displaystyle
+        -\frac{\mu_0 K y}{2}\uvec{z} + \vec{c} & y > 0\\ \displaystyle
+        \frac{\mu_0 K y}{2}\uvec{z} + \vec{c} & y < 0
+    \end{cases}
+\end{equation}

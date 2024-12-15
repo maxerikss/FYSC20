@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.961435"
-     inkscape:cx="158.04756"
-     inkscape:cy="201.12826"
+     inkscape:zoom="1.1574122"
+     inkscape:cx="107.99955"
+     inkscape:cy="239.75901"
      inkscape:window-width="1440"
      inkscape:window-height="786"
      inkscape:window-x="0"
@@ -214,15 +214,15 @@
          x="61.606346"
          y="70.975471">z</tspan></text>
     <path
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.15;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#ArrowTriangleStylized);paint-order:stroke fill markers"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.15;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers;marker-end:url(#ArrowTriangleStylized)"
        id="path14"
        sodipodi:type="arc"
        sodipodi:cx="44.33482"
        sodipodi:cy="70.05278"
-       sodipodi:rx="0.57890809"
+       sodipodi:rx="0.66518122"
        sodipodi:ry="1.7121838"
-       sodipodi:start="0.37450924"
-       sodipodi:end="5.6090837"
+       sodipodi:start="3.6524144"
+       sodipodi:end="2.7171915"
        sodipodi:arc-type="arc"
        sodipodi:open="true" />
     <path
