@@ -23,19 +23,137 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.2102413"
-     inkscape:cx="394.78447"
-     inkscape:cy="558.88162"
+     inkscape:zoom="1.825248"
+     inkscape:cx="341.32348"
+     inkscape:cy="569.51164"
      inkscape:window-width="1440"
      inkscape:window-height="786"
      inkscape:window-x="0"
      inkscape:window-y="25"
      inkscape:window-maximized="0"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1"
+     showgrid="true">
+    <inkscape:grid
+       id="grid1"
+       units="mm"
+       originx="0"
+       originy="0"
+       spacingx="5"
+       spacingy="5"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="2"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
   <defs
-     id="defs1" />
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="ArrowWide"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc"
+         id="path3" />
+    </marker>
+  </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1" />
+     id="layer1">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:0;paint-order:stroke fill markers;marker-end:url(#ArrowWide)"
+       d="m 80,149.99999 h 60"
+       id="path1" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:0;paint-order:stroke fill markers;marker-end:url(#ArrowWide)"
+       d="m 110,179.99999 v -60"
+       id="path2" />
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:0.35;stroke-miterlimit:0;paint-order:stroke fill markers;stroke-dasharray:none"
+       id="path4"
+       cx="110"
+       cy="150"
+       rx="20"
+       ry="19.999998" />
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:0.349999;stroke-miterlimit:0;stroke-dasharray:none;paint-order:stroke fill markers"
+       id="path5"
+       cx="110"
+       cy="150"
+       rx="4.9999976"
+       ry="2.6522038" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.349999;stroke-miterlimit:0;stroke-dasharray:none;marker-end:url(#ArrowWide);paint-order:stroke fill markers"
+       id="path6"
+       sodipodi:type="arc"
+       sodipodi:cx="115.91253"
+       sodipodi:cy="150"
+       sodipodi:rx="2.5"
+       sodipodi:ry="4.9999995"
+       sodipodi:start="3.9022603"
+       sodipodi:end="2.5544256"
+       sodipodi:arc-type="arc"
+       sodipodi:open="true" />
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-size:4.23333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Italic';fill:none;stroke:#000000;stroke-width:0.349999;stroke-miterlimit:0;stroke-dasharray:none;paint-order:stroke fill markers"
+       x="141.75098"
+       y="151.01358"
+       id="text6"><tspan
+         sodipodi:role="line"
+         id="tspan6"
+         style="stroke-width:0.35"
+         x="141.75098"
+         y="151.01358">x</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-size:4.23333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Italic';fill:none;stroke:#000000;stroke-width:0.349999;stroke-miterlimit:0;stroke-dasharray:none;paint-order:stroke fill markers"
+       x="108.90056"
+       y="118.35123"
+       id="text7"><tspan
+         sodipodi:role="line"
+         id="tspan7"
+         style="stroke-width:0.35"
+         x="108.90056"
+         y="118.35123">y</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';fill:none;stroke:#000000;stroke-width:0.349999;stroke-miterlimit:0;stroke-dasharray:none;paint-order:stroke fill markers"
+       x="103.31078"
+       y="147.48625"
+       id="text8"><tspan
+         sodipodi:role="line"
+         id="tspan8"
+         style="stroke-width:0.35"
+         x="103.31078"
+         y="147.48625">A</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';fill:none;stroke:#000000;stroke-width:0.349999;stroke-miterlimit:0;stroke-dasharray:none;paint-order:stroke fill markers"
+       x="123.14794"
+       y="133.14479"
+       id="text9"><tspan
+         sodipodi:role="line"
+         id="tspan9"
+         style="stroke-width:0.35"
+         x="123.14794"
+         y="133.14479">B</tspan></text>
+  </g>
 </svg>

@@ -1,3 +1,77 @@
 \paragraph{Problem:} The centers of two circular conducting loops A and B, of radii $a$ and $b \gg a$, respectively, are located at the origin of a Cartesian coordinate system. At time $t = 0$ both loops lie on the $xy$-plane. While the larger loop remains at rest, the smaller loop, having a resistance $R$, rotates about one of its diameters lying on the $x$ axis with constant angular velocity $\omega$. A constant current $I$ circulates in the larger loop.
+\begin{enumerate}[label=(\alph*)]
+    \item Evaluate the current $I_A$ induced in loop A, neglecting self-inductance effects. You can look up the magnetic field.
+    \item Evaluate the power dissipated in loop A due to Joule heating.
+    \item Now consider the case when loop A is at rest on the $xy$ plane, with a constant current $I$ circulating in it, while loop B rotates around the $x$-axis with constant angular velocity $\omega$. Evaluate the electromotive force induced in B, neglecting self-inductance effects.
+\end{enumerate}
 
-\paragraph{Solution:}
+\paragraph{Solution (a):} We start by drawing a sketch of the problem
+\begin{figure}[H]
+    \centering
+    \input{figures/sketch.pdf_tex}
+    \caption{Sketch of the problem.}
+    \label{fig:sketch}
+\end{figure}
+
+We know that since $b \gg a$ the magnetic field is 
+\begin{equation}
+    \vec{B}_B = \frac{\mu_0 I}{2 b} \uvec{z}.
+\end{equation}
+The flux through loop A is then
+\begin{equation}
+    \Phi_A = \int \vec{B}_B \cdot \dd \vec{a}
+\end{equation}
+where $\dd \vec{a} = (\uvec{z} \cos\omega t + \uvec{y} \sin \omega t)\dd A$ due to the rotation. Thus
+\begin{equation}
+    \Phi_A = \int \frac{\mu_0 I}{2 b} \uvec{z} \cdot (\uvec{z} \cos\omega t + \uvec{y} \sin \omega t) 
+    = \frac{\mu_0 I}{2b} \cos\omega t \int\dd A
+    = \frac{\mu_0 I \pi a^2}{2b} \cos\omega t.
+\end{equation}
+Then the electromotive force is 
+\begin{equation}
+    \mathcal{E}_A = - \frac{\dd \Phi_A}{\dd t} = \frac{\mu_0 I \pi a^2 \omega}{2 b} \sin\omega t.
+\end{equation}
+Using Ohm's law we get
+\begin{equation}
+    I_A = \frac{\mathcal{E}_A}{R} =\frac{\mu_0 I \pi a^2 \omega}{2 b R} \sin\omega t.
+\end{equation}
+
+\paragraph{Answer (a):} The enduced current in loop A is 
+\begin{equation}
+    I_A = \frac{\mu_0 I \pi a^2\omega}{2 b R} \sin\omega t.
+\end{equation}
+
+\paragraph{Solution (b):} We obtain the formula for Joule heatin by combining $P = I \Delta V$ and $\Delta V = RI$ thus we have
+\begin{equation}
+    P_A = I_A^2 R = \frac{\mu_0^2 I^2 \pi^2 a^4 \omega^2}{4 b^2 R} \sin^2 \omega t.
+\end{equation}
+\paragraph{Answer (b):} The power dissipated in loop A from Joule heating is
+\begin{equation}
+    P_A =\frac{\mu_0^2 I^2 \pi^2 a^4 \omega^2}{4 b^2 R} \sin^2 \omega t.
+\end{equation}
+
+\paragraph{Solution (c):} Since we have two loops we get mutual inductance. By the Neumann formula we get that $M_{AB} = M_{BA}$ and since we have the equation
+\begin{equation}
+    \Phi_A = M_{AB} I_B
+\end{equation}
+and we have calculated that 
+\begin{equation}
+    \Phi_A = \frac{\mu_0 I \pi a^2}{2b} \cos\omega t
+\end{equation}
+Since $I = I_B$ it follows that
+\begin{equation}
+    M_{AB} = \frac{\mu_0 \pi a^2}{2b} \cos\omega t.
+\end{equation}
+We have that $I_A = I$ thus 
+\begin{equation}
+    \Phi_B = M_{BA} I_A = M_{AB} I = \frac{\mu_0 I \pi a^2}{2b} \cos\omega t
+\end{equation}
+and the electromotive force becomes
+\begin{equation}
+    \mathcal{E}_B = - \frac{\dd \Phi_B}{\dd t} = \frac{\mu_0 I \pi a^2 \omega}{2 b} \sin\omega t.
+\end{equation}
+
+\paragraph{Answer (c):} The electromotive force induced in loop B is
+\begin{equation}
+    \mathcal{E}_B =  \frac{\mu_0 I \pi a^2 \omega}{2 b} \sin\omega t.
+\end{equation}
